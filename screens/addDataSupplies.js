@@ -7,19 +7,19 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+// import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from "react";
 import { firebase, db } from "../database/firebase"
 import { collection, getDocs, addDoc, deleteDoc, getDoc } from "firebase/firestore"
 
-const addDataSupplies = ({navigation}) => {
+const addDataSupplies = ({ navigation }) => {
   const [addID, setID] = useState("");
   const [addProductname, setProductname] = useState("");
   const [addTotal, setTotal] = useState('');
   function create() {
     console.log("เข้านะจ๊ะ")
     console.log(addID)
-    addDoc(collection(db, "supplies"),{
+    addDoc(collection(db, "supplies"), {
       id_customer: addID,
       productName: addProductname,
       productTotal: addTotal
@@ -33,7 +33,7 @@ const addDataSupplies = ({navigation}) => {
       })
   };
   // const [data, setData] = useState({});
-   // เก็บข้อมูลทั้งหมดในรูปแบบ Object
+  // เก็บข้อมูลทั้งหมดในรูปแบบ Object
 
   // 
   //   try {
@@ -60,15 +60,24 @@ const addDataSupplies = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles}>ลงทะเบียนพัสดุ</Text>
-      <TextInput style={styles.input} placeholder="ID ลูกค้า" value={addID} onChangeText={(addID) => { setID(addID) }}/>
-      <TextInput style={styles.input} placeholder="ชื่อสินค้า" value={addProductname} onChangeText={(addProductname) => { setProductname(addProductname) }}/>
-      <TextInput style={styles.input} placeholder="จำนวนสินค้า" value={addTotal} onChangeText={(addTotal) => { setTotal(addTotal) }}/>
-
-      {/* onChangeText={text => setData({idUser:inputValue1, nameProduct:inputValue2, numberProduct:inputValue3})} */}
-      <Button title="submit" color="#841584" 
-      onPress={() => {create(); navigation.navigate("supplies")}}
-      />
+      <Text style={{
+        fontFamily: 'noto-sans',
+        fontSize: 20,
+        color: "#fff",
+        fontWeight: "bold"
+      }}>ลงทะเบียนพัสดุ</Text>
+      <TextInput style={styles.input} placeholder="ID ลูกค้า" value={addID} onChangeText={(addID) => { setID(addID) }} />
+      <TextInput style={styles.input} placeholder="ชื่อสินค้า" value={addProductname} onChangeText={(addProductname) => { setProductname(addProductname) }} />
+      <TextInput style={styles.input} placeholder="จำนวนสินค้า" value={addTotal} onChangeText={(addTotal) => { setTotal(addTotal) }} />
+      <View style={{
+        flexDirection: "row",
+        width: "80%",
+        justifyContent: "flex-end"
+      }}>
+        <Button title="submit"
+          onPress={() => { create(); navigation.navigate("supplies") }}
+        />
+      </View>
     </View>
   );
 };
@@ -81,14 +90,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#B2A4FF",
     alignItems: "center",
     justifyContent: "flex-start",
+    paddingTop: 20
   },
   input: {
     backgroundColor: "#fff",
     width: "80%",
-    height: "5%",
+    height: "7%",
     margin: 12,
     padding: 10,
     borderRadius: 10,
+    fontFamily: 'noto-sans',
+    fontSize: 15,
+    color: "gray"
   },
 });
 

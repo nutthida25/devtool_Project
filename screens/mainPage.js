@@ -10,41 +10,41 @@ const mainPage = ({ navigation }) => {
     <View style={styles.bigcontainer}>
       <View style={styles.view2}>
         <View style={styles.subview1}>
-          <Text>Wingman</Text>
-          <Text>ส่งของไว บริการด้วยใจ</Text>
+          <Text style={[styles.header, {color: "#fff"}]}>Wingman</Text>
+          <Text style={[styles.testfont, {color: "#fff"}]}>ส่งของไว บริการด้วยใจ</Text>
         </View>
         <View  style={styles.subview2}>
           <Image style={{ width: 120, height: 80 }} source = {{uri:'https://cdn.discordapp.com/attachments/725983079675461725/1096448483579408444/Moneyverse_Gifts_1.png'}}/>
         </View>
       </View>
       <TouchableOpacity style={styles.addSupplie} onPress={() => { navigation.navigate("supplies") }}>
-        <Text>ส่งของ Lot ใหม่</Text>
-        <Image style={{ width: 45, height: 45 }} source = {{uri:'https://cdn.discordapp.com/attachments/725983079675461725/1096447493044174888/image.png'}}/>
+        <Text style={[styles.header, {color: "#B2A4FF"}]}>ส่งของ Lot ใหม่</Text>
+        <Image style={{ width: 50, height: 50 }} source = {{uri:'https://cdn.discordapp.com/attachments/725983079675461725/1096447493044174888/image.png'}}/>
 
       </TouchableOpacity>
       <View style={styles.favaddress}>
-        <Text>ที่อยู่โปรด</Text>
+        <Text style={styles.testfont}>ที่อยู่โปรด</Text>
         <View style={styles.alladdress}>
           <View style={styles.address}>
-            <TouchableOpacity style={styles.circle}></TouchableOpacity>
-            <Text>นางสาว a</Text>
+            <TouchableOpacity style={[styles.circle, {marginBottom: 5}]}></TouchableOpacity>
+            <Text style={styles.testfont}>น้องพิม</Text>
           </View>
           <View style={styles.address}>
-            <TouchableOpacity style={styles.circle}></TouchableOpacity>
-            <Text>นางสาว a</Text>
+            <TouchableOpacity style={[styles.circle, {marginBottom: 5}]}></TouchableOpacity>
+            <Text style={styles.testfont}>พี่ชาย</Text>
           </View>
           <View style={styles.address}>
-            <TouchableOpacity style={styles.circle}></TouchableOpacity>
-            <Text>นางสาว a</Text>
+            <TouchableOpacity style={[styles.circle, {marginBottom: 5}]}></TouchableOpacity>
+            <Text style={styles.testfont}>ไอต้าว</Text>
           </View>
           <View style={styles.address}>
-            <TouchableOpacity style={styles.circle}>
+            <TouchableOpacity style={[styles.circle, {marginBottom: 5}]}>
             <Image style={{ width: 50, height: 50 }} source = {{uri:'https://cdn.discordapp.com/attachments/725983079675461725/1096446539192352930/image.png'}}/>
             </TouchableOpacity>
-            <Text> </Text>
+            <Text style={styles.testfont}> </Text>
           </View>
         </View>
-        <Text>โปรโมชัน</Text>
+        <Text style={styles.testfont}>โปรโมชัน</Text>
       </View>
       <View style={styles.promotion}>
         <ScrollView
@@ -84,8 +84,18 @@ const styles = StyleSheet.create({
     height: '30%',
     flexDirection: "column",
     backgroundColor: "#B2A4FF",
-    padding: 20,
-    justifyContent: "flex-end"
+    paddingLeft: 30,
+    paddingRight: 10,
+    justifyContent: "flex-end",
+  },
+  header: {
+    fontFamily: 'noto-sans',
+    fontSize: 20,
+    fontWeight: "bold"
+  },
+  testfont: {
+    fontFamily: 'noto-sans',
+    fontSize: 15
   },
   addSupplie: {
     width: '85%',
@@ -116,7 +126,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 50,
-    backgroundColor: '#D9D9D9',
+    backgroundColor: '#FDF7C3',
     textAlign: 'center',
     shadowColor: "#666666",
     shadowRadius: 4.50,
@@ -145,7 +155,7 @@ const styles = StyleSheet.create({
   },
   subpromotion: {
     backgroundColor: "#D9D9D9",
-    width: "320%",
+    width: "330%",
     marginRight: 15,
     borderRadius: 20
     // height: "100%",

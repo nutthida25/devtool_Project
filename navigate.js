@@ -45,15 +45,15 @@ const navigator = () => {
                     options={{
                         title: "Back",
                         // headerShown: false,
-                        headerStyle: { backgroundColor: "#937DC2" },
-                        headerTintColor: "white",
+                        headerStyle: { backgroundColor: "#fff" },
+                        headerTintColor: "gray",
 
                     }}
                 />
                 <Stack.Screen name="data" component={Data}
                     options={{
                         title: "Back",
-                        headerStyle: { backgroundColor: "#937DC2" },
+                        headerStyle: { backgroundColor: "#B2A4FF" },
                         headerTintColor: "white",
 
                     }}
