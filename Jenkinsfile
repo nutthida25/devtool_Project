@@ -4,17 +4,17 @@ pipeline {
         DOCKERHUB_CREDENTIALS=credentials('DOCKERHUB')
     }
  
-    // stages {
-    //     stage('Initialize Stage') {
-    //         steps {
+    stages {
+        // stage('Initialize Stage') {
+        //     steps {
             
-    //             echo 'Initial : Delete  containers and images'
-    //              dir('devtool_Project-master') { // change directory to Lab_docker_Jenkins
-    //                 echo "Current path is ${pwd()}"
-    //                 sh "docker-compose down --rmi all --volumes || true"
-    //             }
-    //         }
-    //     }
+        //         echo 'Initial : Delete  containers and images'
+        //          dir('devtool_Project-master') { // change directory to Lab_docker_Jenkins
+        //             echo "Current path is ${pwd()}"
+        //             sh "docker-compose down --rmi all --volumes || true"
+        //         }
+        //     }
+        // }
 
 
         stage('Build Stage') {
@@ -50,8 +50,5 @@ pipeline {
                 }
             }
         }
-
-    
-       
-
     }
+}
