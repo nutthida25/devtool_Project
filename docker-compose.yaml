@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+
+  frontend:
+    build: .
+    image: it63070052/wingman-app:1.0  
+    ports: 
+      - "19006:19006"
